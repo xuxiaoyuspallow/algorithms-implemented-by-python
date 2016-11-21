@@ -10,4 +10,3 @@ def select_sort(data):
     return temp
 
 
-

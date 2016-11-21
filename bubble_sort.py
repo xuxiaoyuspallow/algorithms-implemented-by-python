@@ -22,7 +22,6 @@ def improved_bubble_sort(data):
                 swap_flag = True
         if not swap_flag:
             return temp
-    return temp
 
 
 
