@@ -14,43 +14,30 @@ There are two left leaves in the binary tree, with values 9 and 15 respectively.
 
 
 # Definition for a binary tree node.
-class TreeNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
 
 
 class Solution(object):
+    r = 0
+
     def sumOfLeftLeaves(self, root):
         """
         :type root: TreeNode
         :rtype: int
         """
         if not root:
-            return
-        print(root.val)
-        print(root)
+            return 0
+        # print(root.val)
         while root:
-            self.sumOfLeftLeaves(root.left)
-            self.sumOfLeftLeaves(root.right)
-
-def tree(r):
-    print(r.val)
-    while r.left:
-        tree(r.left)
-        tree(r.right)
-
-if __name__ == '__main__':
-    r1 = TreeNode(3)
-    r2l = TreeNode(9)
-    r2r = TreeNode(20)
-    r1.left = r2l
-    r1.right = r2r
-    r3l = TreeNode(15)
-    r3r = TreeNode(7)
-    r2r.left = r3l
-    r2r.right = r3r
-    s = Solution()
-    print(s.sumOfLeftLeaves(r1))
-    # tree(r1)
+            if root.left:
+                if not root.left.left and not root.left.right:
+                    self.r += root.left.val
+                self.sumOfLeftLeaves(root.left)
+            if root.right:
+                self.sumOfLeftLeaves(root.right)
+            break
+        return self.r
