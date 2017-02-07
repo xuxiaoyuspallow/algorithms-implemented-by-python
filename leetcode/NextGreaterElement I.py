@@ -42,8 +42,3 @@ class Solution(object):
                 result.append(-1)
         return result
 
-if __name__ == '__main__':
-    f = [4, 1, 2]
-    n = [1,3,4,2]
-    s = Solution()
-    print(s.nextGreaterElement(f,n))
