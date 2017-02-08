@@ -36,7 +36,3 @@ class Solution(object):
                 return [buff_dict[target - n], i]
             else:
                 buff_dict[n] = i
-
-if __name__ == '__main__':
-    s = Solution()
-    print(s.twoSum([4,2,1],6))
