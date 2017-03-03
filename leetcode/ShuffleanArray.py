@@ -46,10 +46,6 @@ class Solution(object):
         return self.nums
 
 
-if __name__ == '__main__':
-    s = Solution([1,2,3])
-    s.shuffle()
-    print random.random()
 # Your Solution object will be instantiated and called as such:
 # obj = Solution(nums)
 # param_1 = obj.reset()
