@@ -15,6 +15,31 @@ Can you do it like a boss? Do it without using any builtin function like __built
 language.
 """
 
+"""
+0    0000    0
+-------------
+1    0001    1
+-------------
+2    0010    1
+3    0011    2
+-------------
+4    0100    1
+5    0101    2
+6    0110    2
+7    0111    3
+-------------
+8    1000    1
+9    1001    2
+10   1010    2
+11   1011    3
+12   1100    2
+13   1101    3
+14   1110    3
+15   1111    4
+
+f[i] = f[i/2] + i % 2
+"""
+
 
 class Solution(object):
     def countBits(self, num):
@@ -24,6 +49,6 @@ class Solution(object):
         """
         result = [0]
         for i in range(1,num+1):
-            result.append(result[i - 1 & i] + 1)
+            result.append(result[i >> 2] + i % 2)
         return result
 
