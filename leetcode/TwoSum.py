@@ -10,6 +10,15 @@ Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 """
 
+def two_sum(nums,target):
+    buff = {}
+    for i,num in enumerate(nums):
+        if target - num in buff:
+            return [buff[target - num],i]
+        else:
+            buff[num] = i
+
+
 
 class Solution(object):
     # def twoSum(self, nums, target):
