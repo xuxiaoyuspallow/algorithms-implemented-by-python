@@ -47,8 +47,8 @@ class Solution(object):
     def minimumTotal3(self, triangle):
         if not triangle:
             return
-        for i in xrange(len(triangle)-2, -1, -1):
-            for j in xrange(len(triangle[i])):
+        for i in range(len(triangle)-2, -1, -1):
+            for j in range(len(triangle[i])):
                 triangle[i][j] += min(triangle[i+1][j], triangle[i+1][j+1])
         return triangle[0][0]
 
@@ -57,7 +57,7 @@ class Solution(object):
         if not triangle:
             return
         res = triangle[-1]
-        for i in xrange(len(triangle)-2, -1, -1):
-            for j in xrange(len(triangle[i])):
+        for i in range(len(triangle)-2, -1, -1):
+            for j in range(len(triangle[i])):
                 res[j] = min(res[j], res[j+1]) + triangle[i][j]
         return res[0]
