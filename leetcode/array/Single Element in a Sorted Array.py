@@ -1,5 +1,8 @@
 class Solution(object):
     def singleNonDuplicate(self, nums):
+        """
+        O(log n) binary search
+        """
         l, h = 0, len(nums) - 1
         while l < h:
             mid = (l + h) >> 1
